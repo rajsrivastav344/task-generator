@@ -2,6 +2,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
+const path = require("path");
 require("dotenv").config();
 
 const app = express();
@@ -14,8 +15,16 @@ app.use(express.json()); // Parse JSON bodies
 app.use("/api/specs", require("./routes/specRoutes"));
 app.use("/api/auth", require("./routes/authRoutes"));
 
+// ================== SERVE FRONTEND ==================
+const clientBuildPath = path.join(__dirname, "../client/build");
+app.use(express.static(clientBuildPath));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(clientBuildPath, "index.html"));
+});
+
 // ================== HEALTH CHECK ==================
-app.get("/", (req, res) => {
+app.get("/api/health", (req, res) => {
   res.send("✅ API is running");
 });
 
