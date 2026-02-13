@@ -16,7 +16,7 @@ app.use("/api/specs", require("./routes/specRoutes"));
 app.use("/api/auth", require("./routes/authRoutes"));
 
 // ================== SERVE FRONTEND ==================
-const clientBuildPath = path.join(__dirname, "../client/build");
+const clientBuildPath = path.join(__dirname, "../client/dist");
 app.use(express.static(clientBuildPath));
 
 app.get("*", (req, res) => {
