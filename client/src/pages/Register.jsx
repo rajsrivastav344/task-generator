@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const API = "https://task-generator-1-7t1y.onrender.com//api/auth";
+const API = "https://task-generator-1-7t1y.onrender.com/api/auth";
 
 export default function Register() {
   const [form, setForm] = useState({ name: "", email: "", password: "", role: "user" });
