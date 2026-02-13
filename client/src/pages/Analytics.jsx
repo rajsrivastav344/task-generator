@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-const API = "http://localhost:5000/api/specs";
+const API = "https://task-generator-1-7t1y.onrender.com//api/specs";
 
 export default function Analytics() {
   const [stats, setStats] = useState(null);

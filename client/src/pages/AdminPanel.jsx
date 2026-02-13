@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const API = "http://localhost:5000/api/specs";
+const API = "https://task-generator-1-7t1y.onrender.com//api/specs";
 
 export default function AdminPanel() {
   const [specs, setSpecs] = useState([]);
